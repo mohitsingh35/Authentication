@@ -1,5 +1,7 @@
 package com.ncs.authenticationapp.ui.theme
 
+import android.content.Intent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.ncs.authenticationapp.OtpLoginActivity
 import com.ncs.authenticationapp.firebaseauth.AuthUser
 import com.ncs.authenticationapp.utils.loadingscreen
 import com.ncs.authenticationapp.utils.showMsg
@@ -97,7 +100,9 @@ fun AuthScreen(
             }
         }
         item {
-            Column(modifier = Modifier.fillMaxWidth().padding(top = 30.dp),
+            Column(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 30.dp),
                 horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(text = "Login")
                 Spacer(modifier = Modifier.height(10.dp))
@@ -133,6 +138,14 @@ fun AuthScreen(
                     Text(text = "Login")
                 }
 
+            }
+        }
+        item {
+            Spacer(modifier = Modifier.height(20.dp))
+            Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
+                Button(onClick = { context.startActivity(Intent(context, OtpLoginActivity::class.java)) }) {
+                    Text(text = "Sign in with Otp")
+                }
             }
         }
     }
