@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.ncs.authenticationapp.GoogleAuthActivity
 import com.ncs.authenticationapp.OtpLoginActivity
 import com.ncs.authenticationapp.firebaseauth.AuthUser
 import com.ncs.authenticationapp.utils.loadingscreen
@@ -145,6 +146,14 @@ fun AuthScreen(
             Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
                 Button(onClick = { context.startActivity(Intent(context, OtpLoginActivity::class.java)) }) {
                     Text(text = "Sign in with Otp")
+                }
+            }
+        }
+        item {
+            Spacer(modifier = Modifier.height(20.dp))
+            Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center){
+                Button(onClick = { context.startActivity(Intent(context, GoogleAuthActivity::class.java)) }) {
+                    Text(text = "Sign in with Google")
                 }
             }
         }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Authentication App</string>
+    <string name="web_client_id">203051103687-7n5aeug8peam904tvva378jkskmmnk4d.apps.googleusercontent.com</string>
+    <string name="title_activity_google_auth">GoogleAuthActivity</string>
 </resources>
